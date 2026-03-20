@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-20</title>
+</head>
+<style>
+    body{
+        background-color: rgb(208, 242, 255)
+    }
+    .heading{
+     text-align: center;
+    }
+    .dice-container{
+      
+        width:300px;
+        margin:0 auto;
+        padding:20px;
+        border-radius: 10px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .img-dice{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .btn{
+        width: 200px;
+        height: 50px;
+        border:white;
+        border-radius:10px;
+        background-color: tomato;
+        color: aliceblue;
+        margin:20px auto;
+        cursor: pointer;
+        font-size: 20px;
+      
+    }
+</style>
+<body>
+
+        <h1 class="heading">Dice Roller</h1>
+        <div class="dice-container">
+        <img src="one.png" id="imgDice" class="img-dice"/>
+        <button onclick="rollDice()" class="btn">Roll Dice</button>
+       </div>
+</body>
+
+<script>
+    const imgDice=document.getElementById("imgDice");
+    function getDiceFace(){
+        const min=1;
+        const max=6;
+        return Math.floor(Math.random()*(max - min + 1)) + min;
+    }
+
+        function rollDice(){
+            const diceFace=getDiceFace();
+
+            if(diceFace == 1){
+             imgDice.src= "one.png";
+            }
+            else if(diceFace == 2){
+            imgDice.src= "two.png";
+            }
+            else if (diceFace == 3){
+                imgDice.src= "three.png";
+            }
+            else if (diceFace == 4){
+                imgDice.src= "four.png";
+            }
+            else if (diceFace == 5){
+                imgDice.src= "five.png";
+            }
+            else if (diceFace == 6){
+                imgDice.src= "six.png";
+            }
+        }
+
+    </script>
+</html>
